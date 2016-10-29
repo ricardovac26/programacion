@@ -1,0 +1,76 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+//prototipo de funciones
+float fsuma(float a, float b);
+float fresta(float a,float b);
+float fmultiplicacion(float a,float b);
+float fdivision(float a,float b);
+
+
+void main()
+{
+	float a,b,r,suma,resta,multiplicacion,division;
+		int opcion;
+	cout<< "Ingrese a: " ;
+    cin>>a;
+    cout<< "Ingrese b: " ;
+    cin>>b;
+   do {
+     cout << endl;
+     cout << "1.- Suma" << endl;
+     cout << "2.- Resta" << endl;
+     cout << "3.- Producto" << endl;
+     cout << "4.- División" << endl;
+	 cout << "0.- Salir" << endl;
+     cout << "Elige una opción: " ;
+     cin >> opcion;
+     switch (opcion) {
+	    case 1:{
+				suma= fsuma(a,b);//llamada de la funcion
+				cout <<"La suma es:" <<suma;    
+				break; 
+			 }
+		case 2: 
+			{ resta= fresta(a,b);
+			cout <<"La resta es:" <<resta;    
+			break;
+			 }
+			
+	    case 3: 
+			{ multiplicacion= fmultiplicacion(a,b);
+            cout <<"La multiplicacion es:" <<multiplicacion;    
+	        break; 
+	        }
+	
+	    case 4:
+			{ division= fdivision(a,b);
+            cout<<"La division es:" <<division;    
+	        break; 
+	        }
+		
+		case 0:
+			cout << "Salir";break;
+	        default: cout << "Opcion invalida" << endl;
+            }
+     cout<< "El resultado es " << r << endl;
+	 } while (opcion != 0);
+     getch();
+	 }
+
+//DECLARANDO FUNCIONES
+ float fsuma (float a, float b)
+ {	float s= a+b ;	
+	return s;   }
+
+ float fresta (float a, float b)
+ {	float r= a-b ;	
+	return r;   }
+ float fmultiplicacion (float a, float b)
+ {	float m= a*b ;	
+	return m;   }
+ 
+ float fdivision (float a, float b)
+ {	float d= a/b ;	
+	return d;   }
